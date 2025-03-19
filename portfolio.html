@@ -12,7 +12,6 @@
       background: #000;
       color: #fff;
     }
-    /* Zmieniono klasę z .swiper-container na .swiper */
     .swiper {
       width: 100%;
       height: 100vh;
@@ -40,23 +39,33 @@
 </head>
 <body>
 
-<!-- Zmieniono klasę kontenera na "swiper" -->
 <div class="swiper">
   <div class="swiper-wrapper">
+    <!-- Pierwszy film: autoplay=1 oraz mute=1 -->
     <div class="swiper-slide">
       <div class="video-container">
-        <!-- Upewnij się, że parametr origin odpowiada Twojej stronie -->
-        <iframe src="https://www.youtube.com/embed/GvE27Z-C55o?start=0&rel=0&origin=https://twoja-strona.github.io" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/GvE27Z-C55o?start=0&autoplay=1&mute=1&rel=0&origin=https://twoja-strona.github.io" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen></iframe>
       </div>
     </div>
+    <!-- Drugi film -->
     <div class="swiper-slide">
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dfL9e9MNz5w?start=41&rel=0&origin=https://twoja-strona.github.io" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/dfL9e9MNz5w?start=41&autoplay=1&mute=1&rel=0&origin=https://twoja-strona.github.io" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen></iframe>
       </div>
     </div>
+    <!-- Trzeci film -->
     <div class="swiper-slide">
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/LHQ-SnVkyZI?start=98&rel=0&origin=https://twoja-strona.github.io" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/LHQ-SnVkyZI?start=98&autoplay=1&mute=1&rel=0&origin=https://twoja-strona.github.io" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -71,10 +80,10 @@
 <!-- Biblioteka JS Swiper -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
-  // Inicjalizacja slidera, odwołujemy się teraz do ".swiper"
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
-    loop: true,
+    // Jeśli pojawia się glitch przy włączonym loop, spróbuj ustawić loop: false.
+    loop: false, 
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
