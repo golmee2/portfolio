@@ -41,57 +41,62 @@
 
 <div class="swiper">
   <div class="swiper-wrapper">
-    <!-- Pierwszy film: autoplay=1 oraz mute=1 -->
+    <!-- Film 1 -->
     <div class="swiper-slide">
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/GvE27Z-C55o?start=0&autoplay=1&mute=1&rel=0&origin=https://twoja-strona.github.io" 
+        <iframe src="https://www.youtube.com/embed/GvE27Z-C55o?start=0&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&origin=https://twoja-strona.github.io" 
                 frameborder="0" 
                 allow="autoplay; encrypted-media" 
-                allowfullscreen></iframe>
+                allowfullscreen>
+        </iframe>
       </div>
     </div>
-    <!-- Drugi film -->
+    <!-- Film 2 -->
     <div class="swiper-slide">
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dfL9e9MNz5w?start=41&autoplay=1&mute=1&rel=0&origin=https://twoja-strona.github.io" 
+        <iframe src="https://www.youtube.com/embed/dfL9e9MNz5w?start=41&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&origin=https://twoja-strona.github.io" 
                 frameborder="0" 
                 allow="autoplay; encrypted-media" 
-                allowfullscreen></iframe>
+                allowfullscreen>
+        </iframe>
       </div>
     </div>
-    <!-- Trzeci film -->
+    <!-- Film 3 -->
     <div class="swiper-slide">
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/LHQ-SnVkyZI?start=98&autoplay=1&mute=1&rel=0&origin=https://twoja-strona.github.io" 
+        <iframe src="https://www.youtube.com/embed/LHQ-SnVkyZI?start=98&autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&origin=https://twoja-strona.github.io" 
                 frameborder="0" 
                 allow="autoplay; encrypted-media" 
-                allowfullscreen></iframe>
+                allowfullscreen>
+        </iframe>
       </div>
     </div>
   </div>
 
-  <!-- Nawigacja -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
   <!-- Paginacja (opcjonalnie) -->
   <div class="swiper-pagination"></div>
 </div>
 
-<!-- Biblioteka JS Swiper -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
-    // Jeśli pojawia się glitch przy włączonym loop, spróbuj ustawić loop: false.
-    loop: false, 
+    loop: true,
+    autoplay: {
+      delay: 8000, // zmiana slajdu co 8 sekund
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
+    // Jeżeli chcesz ukryć przyciski slidera, usuń lub zakomentuj poniższe opcje:
+    /* 
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    */
   });
 </script>
 
